@@ -3,21 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lido.Lifestyle.Api", "Lido.Lifestyle.Api\Lido.Lifestyle.Api.csproj", "{6F97E0D3-488B-497E-AE92-E1F931873F5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lido.Lifestyle.Api", "Lido.Lifestyle.Api\Lido.Lifestyle.Api.csproj", "{6F97E0D3-488B-497E-AE92-E1F931873F5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lido.Lifestyle.Application", "Lido.Lifestyle.Application\Lido.Lifestyle.Application.csproj", "{A58BE05B-099F-4392-85FE-535DC083061A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lido.Lifestyle.Application", "Lido.Lifestyle.Application\Lido.Lifestyle.Application.csproj", "{A58BE05B-099F-4392-85FE-535DC083061A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lido.Lifestyle.Domain", "Lido.Lifestyle.Domain\Lido.Lifestyle.Domain.csproj", "{8AEDFFA9-4D8D-4989-A7B5-10872D9C68C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lido.Lifestyle.Domain", "Lido.Lifestyle.Domain\Lido.Lifestyle.Domain.csproj", "{8AEDFFA9-4D8D-4989-A7B5-10872D9C68C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lido.Lifestyle.Infrastructure", "Lido.Lifestyle.Infrastructure\Lido.Lifestyle.Infrastructure.csproj", "{A823AC6F-2922-4884-AB44-F75F6774EEF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lido.Lifestyle.Infrastructure", "Lido.Lifestyle.Infrastructure\Lido.Lifestyle.Infrastructure.csproj", "{A823AC6F-2922-4884-AB44-F75F6774EEF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lido.Lifestyle.Web", "Lido.Lifestyle.Web\Lido.Lifestyle.Web.csproj", "{AE616F85-77F3-4432-91C4-5C07C3748C96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6F97E0D3-488B-497E-AE92-E1F931873F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,5 +35,15 @@ Global
 		{A823AC6F-2922-4884-AB44-F75F6774EEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A823AC6F-2922-4884-AB44-F75F6774EEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A823AC6F-2922-4884-AB44-F75F6774EEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE616F85-77F3-4432-91C4-5C07C3748C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE616F85-77F3-4432-91C4-5C07C3748C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE616F85-77F3-4432-91C4-5C07C3748C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE616F85-77F3-4432-91C4-5C07C3748C96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAF598C9-E240-4790-9CCB-941F6FFEAAA8}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,70 @@
+﻿ @page "/AddSession"
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@using Lido.Lifestyle.Application.UseCases.Session.Commands
+@using Lido.Lifestyle.Domain.Enums
+@using MediatR
+@using Riok.Mapperly.Abstractions
+@inject ILogger<AddSession> Logger
+@inject ISender sender
+
+<PageTitle>Add Session</PageTitle>
+
+<h1>Add Session</h1>
+
+<EditForm Model="Session" OnValidSubmit="Submit" FormName="AddSession">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="date" class="form-label">Date</label>
+        <InputDate class="form-control" name="date" id="date" @bind-Value="Session!.Date"/>
+    </div>
+    <div class="form-group">
+        <label for="stroke" class="form-label">Stroke</label>
+        <InputSelect class="form-control" id="stroke" name="stroke" @bind-Value="Session!.Stroke">
+            @foreach (var stroke in Enum.GetValues(typeof(Stroke)))
+            {
+
+                <option value="@stroke">@stroke</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="form-group">
+        <label for="lengths" class="form-label">Lengths</label>
+        <InputNumber class="form-control" name="lengths" id="lengths" @bind-Value="Session!.Lengths" />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public SessionFormData? Session { get; set; }
+
+    protected override void OnInitialized() => Session ??= new() { Date = DateTime.UtcNow };
+
+    private async void Submit()
+    {
+        Logger.LogInformation("Session = {Lengths} {Stroke} {Date}", Session?.Lengths, Session?.Stroke, Session?.Date);
+        var command = new CreateSessionCommand
+            {
+                Date = DateOnly.FromDateTime(Session.Date),
+                Lengths = Session.Lengths,
+                Stroke = Session.Stroke
+
+            };
+        var response = await sender.Send(command);
+        Logger.LogInformation("SessionId: {response}", response.ToString());
+    }
+
+    public class SessionFormData
+    {
+        public int Lengths { get; set; }
+        public Stroke Stroke { get; set; }
+        [Required]
+        public DateTime Date { get; set; }
+    }
+
+
+}
